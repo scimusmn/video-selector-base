@@ -1,0 +1,6 @@
+# Large asset types
+*.mp4
+
+# Work folders
+[Ww]ork/
+
