@@ -16,6 +16,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   // Start the clock
   this.idleTime = 0;
   this.active = false;
+  this.videoPlayer = {};
 
   var thisRef = this;
 
@@ -38,17 +39,14 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 */
 Screensaver.prototype.createVideo = function(videoSrc) {
 
-  //Create video tag
-  var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" class="video-js vjs-default-skin vjs-big-play-centered"><source src="' + videoSrc + '" type="video/mp4" /></video>';
+  // Create video tag
+  var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" loop ><source src="' + videoSrc + '" type="video/mp4" /></video>';
   var videoOptions = { 'controls': false, 'autoplay': false, 'loop': 'true', 'preload': 'auto' };
 
-  //Append to html
+  // Append to html
   $('body').append(videoTag);
 
-  //Initialize player
-  this.videoPlayer = videojs('screensaver_video', videoOptions, function() {
-    // Player (this) is initialized and ready.
-  });
+  this.videoPlayer = $('#screensaver_video');
 
 }
 
@@ -70,8 +68,8 @@ Screensaver.prototype.timerIncrement = function() {
 }
 
 /**
-* Zero the idle timer on any movement.
-*/
+ * Zero the idle timer on any movement.
+ */
 Screensaver.prototype.anyAction = function() {
 
   this.idleTime = 0;
@@ -92,24 +90,24 @@ Screensaver.prototype.sleep = function() {
   this.active = true;
   this.onSleepCallback();
 
-  //Show the video
+  // Show the video
   $('#screensaver_video').fadeIn('slow');
-  this.videoPlayer.play();
+  this.videoPlayer[0].play();
 
 }
 
 /**
-* Remove the screensaver
-*/
+ * Remove the screensaver
+ */
 Screensaver.prototype.awake = function() {
 
   this.active = false;
   this.onAwakeCallback();
 
-  //Hide the video
+  // Hide the video
   var thisRef = this;
   $('#screensaver_video').fadeOut('slow', function() {
-    thisRef.videoPlayer.pause();
+    thisRef.videoPlayer[0].pause();
   });
 
 }

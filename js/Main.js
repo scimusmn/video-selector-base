@@ -9,17 +9,18 @@ $(document).ready(function() {
 
     setupFullscreenVideo();
     setupBackgroundVideo();
-    setupThumbGrid();
+    videoButtons();
     setupScreenSaver();
 
   }
 
-  function setupThumbGrid() {
+  function videoButtons() {
 
     // Attach click listeners
     $('.video-button').on('click', function() {
 
       if (buttonsLocked) return;
+      console.log('vtn click');
 
       lockButtons(true);
 
@@ -34,8 +35,8 @@ $(document).ready(function() {
           showFullscreenVideo(src);
 
           // Stop background video
-          backgroundPlayer.currentTime(0.0);
-          backgroundPlayer.pause();
+          backgroundPlayer.currenttime = 0.0;
+          backgroundPlayer[0].pause();
 
         }, 300);
 
@@ -70,54 +71,32 @@ $(document).ready(function() {
   function setupBackgroundVideo() {
 
     // Create video tag
-    var options = { 'controls': false, 'autoplay': false, 'loop': true, 'preload': 'auto' };
+    // var options = { 'controls': false, 'autoplay': false, 'loop': true, 'preload': 'auto' };
 
     // Initialize player
-    backgroundPlayer = videojs('background_video', options, function() {
-
-      this.src([{ type: 'video/mp4', src: './videos/background.mp4' }]);
-      this.play();
-
-      // Player (this) is initialized and ready.
-      this.on('playing', function() {
-
-        console.log('background video started');
-
-      });
-
-    });
+    backgroundPlayer = $('#fullscreen_video');
 
   }
 
   function setupFullscreenVideo() {
 
-    // Create video tag
-    var options = { 'controls': false, 'autoplay': true, 'loop': false, 'preload': 'auto' };
+    // Get video tag
+    videoPlayer = $('#fullscreen_video');
 
-    // Initialize player
-    videoPlayer = videojs('fullscreen_video', options, function() {
+    if (videoPlayer) {
 
-      // Player (this) is initialized and ready.
-      this.on('playing', function() {
-
-        $('#player_screen').show();
-
-      });
-
-      this.on('waiting', function() {
-
-        // console.log('Video waiting.');
-
-      });
-
-      this.on('ended', function() {
-
+      videoPlayer.onended = function() {
+        console.log('fullscreenVideo ended');
         hideFullscreenVideo();
         transitionInSelectionScreen();
+      };
 
-      });
+      videoPlayer.onplay = function() {
+        console.log('fullscreenVideo play');
+        $('#fullscreen_video').show();
+      };
 
-    });
+    }
 
     // Home button
     $('.home-btn').on('click', function() {
@@ -130,7 +109,7 @@ $(document).ready(function() {
 
   function transitionInSelectionScreen() {
 
-    backgroundPlayer.currentTime(0.0);
+    backgroundPlayer.currenttime = 0.0;
 
     // Slide btns from bottom
     TweenMax.staggerFrom('.video-button', 1, {bottom:-800, delay:0.25, ease:Power3.easeOut}, 0.2);
@@ -142,26 +121,26 @@ $(document).ready(function() {
 
   function showFullscreenVideo(vidSrc) {
 
-    videoPlayer.pause();
-    videoPlayer.src([{ type: 'video/mp4', src: vidSrc }]);
+    videoPlayer[0].pause();
+    videoPlayer.attr('src', vidSrc);
 
   }
 
   function hideFullscreenVideo() {
 
     // Start the background video
-    backgroundPlayer.currentTime(0.0);
-    backgroundPlayer.play();
+    backgroundPlayer.currenttime = 0.0;
+    backgroundPlayer[0].play();
 
-    //Hide the video
+    // Hide the video
     $('#player_screen').fadeOut('fast', function() {
-      videoPlayer.pause();
+      videoPlayer[0].pause();
       $('#player_screen').hide();
     });
 
-    //Hide the video
+    // Hide the video
     $('#player_screen').fadeOut('fast', function() {
-      videoPlayer.pause();
+      videoPlayer[0].pause();
       $('#player_screen').hide();
       TweenMax.to($('.video-button'), 0.4, { css: { opacity:1, scale:1 }, delay:0.05, ease:Power3.easeIn });
       lockButtons(false);
@@ -177,8 +156,8 @@ $(document).ready(function() {
 
           // Go to screensaver
           // Stop background video
-          backgroundPlayer.currentTime(0.0);
-          backgroundPlayer.pause();
+          backgroundPlayer.currenttime = 0.0;
+          backgroundPlayer[0].pause();
 
         },
 
@@ -186,8 +165,8 @@ $(document).ready(function() {
 
           // Awake from SS
           // Start the background video
-          backgroundPlayer.currentTime(0.0);
-          backgroundPlayer.play();
+          backgroundPlayer.currenttime = 0.0;
+          backgroundPlayer[0].play();
 
         });
 

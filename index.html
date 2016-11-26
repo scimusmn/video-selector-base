@@ -1,77 +1,87 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class='no-js lt-ie9 lt-ie8 lt-ie7'> <![endif]-->
+<!--[if IE 7]>         <html class='no-js lt-ie9 lt-ie8'> <![endif]-->
+<!--[if IE 8]>         <html class='no-js lt-ie9'> <![endif]-->
+<!--[if gt IE 8]><!--> <html class='no-js'> <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MNRRA Nest Survey Videos</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SMM Video Selector</title>
+    <meta name='description' content=''>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel='stylesheet' href='css/normalize.css'>
+    <link rel='stylesheet' href='css/main.css'>
 
     <!-- Javascript -->
-    <script src=  "js/vendor/gsap/src/minified/TweenMax.min.js"></script>
-    <script src = "js/vendor/jquery/dist/jquery.min.js"></script>
-    <script src=  "js/Screensaver.js"></script>
-    <script src=  "js/Main.js"></script>
+    <script src='js/vendor/gsap/src/minified/TweenMax.min.js'></script>
+    <script src='js/vendor/jquery/dist/jquery.min.js'></script>
+    <script src='js/Screensaver.js'></script>
+    <script src='js/Main.js'></script>
 
   </head>
   <body>
+<!--
+    <video-selector>
 
-    <div id="wrapper">
+      <video-button video-path='videos/video_1.mp4'>
+
+        <h3>Here's the first video</h3>
+        <div class='play-btn'></div>
+
+      </video-button>
+
+    </video-selector>
+ -->
+    <div id='wrapper'>
 
     <!-- Video Selection Screen -->
-      <div id="selection_screen" class="screen">
+      <div id='selection_screen' class='screen'>
 
        <!-- ****************** -->
        <!-- Start Editing Here -->
        <!-- ****************** -->
 
-        <h1 class="title">Your Unique Video Selector</h1>
-
-        <p>
-          National Park Service biologists study eagles to learn about the health of the river ecosystem. By testing blood and feather samples from chicks they learn about contaminants in the river that may effect all of the animals, including humans, that live in or near the river.
-        </p>
-
-        <VideoButton video-path="videos/video_1.mp4">
+        <h1>Your Unique Video Selector</h1>
+<!--
+        <VideoButton video-path='videos/video_1.mp4'>
           <h3>Here's the first video</h3>
-          <div class="play-btn"></div>
+          <div class='play-btn'></div>
         </VideoButton>
 
-        <VideoButton video-path="videos/video_2.mp4">
+        <VideoButton video-path='videos/video_2.mp4'>
           <h3>Here's your second video</h3>
-          <div class="play-btn"></div>
+          <div class='play-btn'></div>
         </VideoButton>
 
-        <VideoButton video-path="videos/video_3.mp4">
+        <VideoButton video-path='videos/video_3.mp4'>
           <h3>And your third video</h3>
-          <div class="play-btn"></div>
+          <div class='play-btn'></div>
         </VideoButton>
+ -->
+        <div class='video-button' video-path='videos/video_3.mp4'>
+          <h3>And your third video</h3>
+          <div class='play-btn'></div>
+        </div>
 
-        <video ref='demoVid' width='972' height='706' autoPlay='autoplay' >
-          <source src= type='video/mp4' />
-        </video>
+        <!-- Looping Background Video -->
+<!--         <video id='background_video' width='1920' height='1080' autoPlay='autoplay' loop>
+          <source src='./videos/background.mp4' type='video/mp4' />
+        </video> -->
 
-        <video id="background_video" class="video-js vjs-default-skin">
-          <!-- <source src="./videos/background.mp4" type="video/mp4"> -->
-        </video>
-        <video width='972' height='706' autoPlay='autoplay' >
-                      <source src={vidPath} type='video/mp4' />
-                    </video>
+        <!-- ****************** -->
+        <!-- Stop Editing Here -->
+        <!-- ****************** -->
 
       </div>
 
       <!-- Full Screen Video Player -->
-      <div id="player_screen" class="screen" style="display:none;">
+      <div id='player_screen' class='screen' style='display:none;'>
 
-        <video id="fullscreen_video" class="video-js vjs-default-skin"></video>
+        <video id='fullscreen_video' width='1920' height='1080' autoPlay></video>
 
-        <div class="home-btn" data-role="button"></div>
+        <div class='home-btn' data-role='button'></div>
 
       </div>
 
