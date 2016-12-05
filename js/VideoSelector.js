@@ -27,6 +27,32 @@ class VideoSelector {
 
     this.addBackground();
 
+    this.readyVideoButtons();
+
+  }
+
+  readyVideoButtons() {
+
+    // Attach click listeners
+    const _this = this;
+    $('.video-button').on('click', function(event) {
+
+      // Launch fullscreen video player
+      var src = $(this).attr('video-path');
+
+      // Wait one second. Start video.
+      // setTimeout(function() {
+      _this.showSelectedVideo(src);
+
+    });
+
+    // Home button
+    $('.home-btn').on('click', function() {
+
+      _this.hideSelectedVideo();
+
+    });
+
   }
 
   readyVideoPlayer() {
@@ -70,9 +96,34 @@ class VideoSelector {
 
   }
 
-  getVidDiv(id, src) {
-        const vidDiv = "<video id='"+id+"' width='"+this.width+"' height='"+this.height+"' autoPlay='autoplay' loop><source src='"+src+"' type='video/mp4'/></video>";
-        return vidDiv;
+  showSelectedVideo(src) {
+
+    const player = $('#fullscreen_video');
+    const source = player.children('source');
+    player[0].pause();
+    console.log('src', src);
+    source.attr('src', src);
+
+    $('#player_screen').show();
+    player.load();
+
   }
+
+  hideSelectedVideo() {
+
+    // Hide the video
+    $('#player_screen').fadeOut('fast', function() {
+      const player = $('#fullscreen_video');
+      player[0].pause();
+      $('#player_screen').hide();
+    });
+
+  }
+
+  getVidDiv(id, src) {
+    const vidDiv = "<video id='"+id+"' width='"+this.width+"' height='"+this.height+"' autoPlay='autoplay' loop><source src='"+src+"' type='video/mp4'/></video>";
+    return vidDiv;
+  }
+
 
 }

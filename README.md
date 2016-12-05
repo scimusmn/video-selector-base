@@ -30,6 +30,6 @@ This project is meant to be as unassuming and bare bones as possible, providing 
 |-------------------|---------------------|---------|-----------------------------------------------------------------------|
 | **timeoutSecs**   | `Number`            | `60`    | Seconds of inactivity before triggering screensaver mode. Set to 0 to disable.             |
 | **hideCursor**    | `Boolean`           | `true`  | Hides cursor (for touch screens)                                      |
-| **background**    | `String`            | `'images/background.png'`  | Path to either an image or video (mp4) asset. Providing a video asset will generate a looping background video                  |
+| **background** (coming soon)    | `String`            | `'images/background.png'`  | Path to either an image or video (mp4) asset. Providing a video asset will generate a looping background video                  |
 | **screensaver**   | `String`            | `'videos/screensaver.mp4'` | Path to video asset which displays on loop during screensaver mode.                                              |
-| **animation**     | `Boolean`           | `true`                     | Enables default animations for all buttons on press                       |
+| **animation** (coming soon)     | `Boolean`           | `true`                     | Enables default animations for all buttons on press                       |

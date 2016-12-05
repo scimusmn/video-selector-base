@@ -23,75 +23,47 @@
       const options = {tryg:'what'};
       $(document).ready(() => {
 
-        const selector = new VideoSelector(options);
-
-        // selector.myMethod();
+        new VideoSelector(options);
 
       });
 
     </script>
-<!--
-    <video-selector>
-
-      <video-button video-path='videos/video_1.mp4'>
-
-        <h3>Here's the first video</h3>
-        <div class='play-btn'></div>
-
-      </video-button>
-
-    </video-selector>
- -->
-    <div id='wrapper'>
 
     <!-- Video Selection Screen -->
-      <div id='selection_screen' class='screen'>
+    <div id='selection_screen' class='screen'>
 
-       <!-- ****************** -->
-       <!-- Start Editing Here -->
-       <!-- ****************** -->
+     <!-- ****************** -->
+     <!-- Start Editing Here -->
+     <!-- ****************** -->
 
-        <h1>Your Unique Video Selector</h1>
-<!--
-        <VideoButton video-path='videos/video_1.mp4'>
-          <h3>Here's the first video</h3>
-          <div class='play-btn'></div>
-        </VideoButton>
+      <h1>Your Unique Video Selector</h1>
 
-        <VideoButton video-path='videos/video_2.mp4'>
-          <h3>Here's your second video</h3>
-          <div class='play-btn'></div>
-        </VideoButton>
-
-        <VideoButton video-path='videos/video_3.mp4'>
-          <h3>And your third video</h3>
-          <div class='play-btn'></div>
-        </VideoButton>
- -->
-<!--         <div class='video-button' video-path='videos/video_3.mp4'>
-          <h3>And your third video</h3>
-          <div class='play-btn'></div>
-        </div> -->
-
-        <!-- Looping Background Video -->
-<!--         <video id='background_video' width='1920' height='1080' autoPlay='autoplay' loop>
-          <source src='./videos/background.mp4' type='video/mp4' />
-        </video> -->
-
-        <!-- ****************** -->
-        <!-- Stop Editing Here -->
-        <!-- ****************** -->
-
+      <div class='video-button' video-path='videos/video_1.mp4'>
+        <h3>Here's the first video</h3>
+        <div class='play-btn'></div>
+        <img src='images/btn_bg_1.png'/>
       </div>
 
-      <!-- Full Screen Video Player -->
-    <!--   <div id='player_screen' class='screen' style='display:none;'>
+      <div class='video-button' video-path='videos/video_2.mp4'>
+        <h3>Here's your second video</h3>
+        <div class='play-btn'></div>
+        <img src='images/btn_bg_2.png'/>
+      </div>
 
-        <video id='fullscreen_video' width='1920' height='1080' autoPlay></video>
+      <div class='video-button' video-path='videos/video_3.mp4'>
+        <h3>And your third video</h3>
+        <div class='play-btn'></div>
+        <img src='images/btn_bg_3.png'/>
+      </div>
 
-        <div class='home-btn' data-role='button'></div>
+      <!-- ****************** -->
+      <!-- Stop Editing Here -->
+      <!-- ****************** -->
 
-      </div> -->
+              <!-- Looping Background Video -->
+<!--         <video id='background_video' width='1920' height='1080' autoPlay='autoplay' loop>
+        <source src='./videos/background.mp4' type='video/mp4' />
+      </video>  -->
 
     </div>
 
