@@ -72,6 +72,8 @@ Screensaver.prototype.timerIncrement = function() {
  */
 Screensaver.prototype.anyAction = function() {
 
+  console.log('anyaction');
+
   this.idleTime = 0;
 
   if (this.active == true) {

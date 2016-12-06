@@ -9,10 +9,8 @@
     <!-- Imports -->
     <link rel='stylesheet' href='css/normalize.css'>
     <link rel='stylesheet' href='css/main.css'>
-    <!-- <script src='js/vendor/gsap/src/minified/TweenMax.min.js'></script> -->
-    <!-- <script src='js/Screensaver.js'></script> -->
-    <!-- <script src='js/Main.js'></script> -->
     <script src='js/vendor/jquery/dist/jquery.min.js'></script>
+    <script src='js/Screensaver.js'></script>
     <script src='js/VideoSelector.js'></script>
 
   </head>
@@ -20,8 +18,12 @@
 
     <script>
 
-      const options = {tryg:'what'};
       $(document).ready(() => {
+
+        // Set up Video Selector.
+        // See README for available options.
+        const options = { hideCursor:false,
+                          timeoutSecs:60 };
 
         new VideoSelector(options);
 
@@ -44,13 +46,13 @@
       </div>
 
       <div class='video-button' video-path='videos/video_2.mp4'>
-        <h2>Here's your second video</h2>
+        <h2>The second video</h2>
         <div class='play-btn'></div>
         <img src='images/btn_bg_2.png'/>
       </div>
 
       <div class='video-button' video-path='videos/video_3.mp4'>
-        <h2>And your third video</h2>
+        <h2>And the third video</h2>
         <div class='play-btn'></div>
         <img src='images/btn_bg_3.png'/>
       </div>

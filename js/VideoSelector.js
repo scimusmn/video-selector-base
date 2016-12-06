@@ -2,17 +2,16 @@ class VideoSelector {
 
   constructor(options) {
 
-    console.log('VideoSelector()');
-    console.dir(options);
-
+    // Collect options
+    // (values on right are defaults)
     this.timeoutSecs = options.timeoutSecs || 60;
     this.screensaver = options.screensaver || 'videos/screensaver.mp4';
     this.background = options.background || 'images/background.png';
-    this.animation = options.animation || true;
-    this.hideCursor = options.hideCursor || true;
+    this.animation = options.animation; // Defaults to false
+    this.hideCursor = options.hideCursor; // Defaults to false
 
-    this.width = 1920;
-    this.height = 1080;
+    this.width = options.width || 1920;
+    this.height = options.height || 1080;
 
     this.readyVideoPlayer();
 
@@ -22,12 +21,25 @@ class VideoSelector {
       this.timeoutSecs = 0;
       this.screensaver = '';
     } else {
-      // this.readyScreensaver();
+      this.saver = this.readyScreensaver();
     }
 
+    // Add video or image background
     this.addBackground();
 
+    // Add button listeners...
     this.readyVideoButtons();
+
+    // Hide or show cursor
+    if (this.hideCursor) {
+
+      $('body').css('cursor', 'none');
+
+    } else {
+
+      $('body').css('cursor', 'auto');
+
+    }
 
   }
 
@@ -40,8 +52,6 @@ class VideoSelector {
       // Launch fullscreen video player
       var src = $(this).attr('video-path');
 
-      // Wait one second. Start video.
-      // setTimeout(function() {
       _this.showSelectedVideo(src);
 
     });
@@ -81,19 +91,38 @@ class VideoSelector {
 
     console.log('readyScreensaver', this.screensaver);
 
+    // 3 minute screensaver timeout (one minute more than longest video)
+    const saver = new Screensaver(this.timeoutSecs, this.screensaver,
+
+      function() {
+
+        // Going to screensaver
+        // TODO - Stop background video (if needed)
+
+      },
+
+      function() {
+
+        // Awaking from screensaver
+        // TODO - Start the background video (if needed)
+
+      });
+
+    return saver;
+
   }
 
   addBackground() {
 
     console.log('addBackground', this.background);
 
-    let bg = "<img id='background' class='background' src='"+this.background+"'/>";
+    const bg = "<img id='background' class='background' src='" + this.background + "'/>";
 
     if(this.background.indexOf('.mp4') == -1) {
       // Assume image background'
     } else {
       // Setup video backgroound
-      // TODO Add div tag
+      // TODO - Add div tag
     }
 
     // Add to DOM
@@ -122,6 +151,8 @@ class VideoSelector {
       player[0].pause();
       $('#player_screen').hide();
     });
+
+    if (this.saver) this.saver.anyAction();
 
   }
 
