@@ -1,7 +1,6 @@
 # video-selector-base
-Starter project for SMM touch-based video selectors.
 
-This project is meant as a starting place for future SMM video selectors, providing an easy to understand base for customization.
+This project is a starting place for future SMM video selectors, providing an easy to understand code base for customization.
 
 The simplest way to use this template is to clone and replace the existing assets. However, full customization is possible by diving into the CSS and Javascript.
 
@@ -38,4 +37,4 @@ The simplest way to use this template is to clone and replace the existing asset
 
 
 
-Note about gitignore: Because the files are so small, the gitignore includes exceptions for the example video files. You should either remove the exception, or simply use different file names for your videos.
+Note about .gitignore: Because the files are so small, the gitignore includes exceptions for the example video files. You should either remove the exceptions from .gitignore, or use different file names for your videos.
