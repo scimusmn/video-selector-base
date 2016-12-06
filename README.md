@@ -1,7 +1,9 @@
 # video-selector-base
 Starter project for SMM touch-based video selectors.
 
-This project is meant to be as unassuming and bare bones as possible, providing an easy to understand starting point for future video selectors.
+This project is meant as a starting place for future SMM video selectors, providing an easy to understand base for customization.
+
+The simplest way to use this template is to clone and replace the existing assets. However, full customization is possible by diving into the CSS and Javascript.
 
 
 # How To Todos
