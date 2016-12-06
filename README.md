@@ -33,3 +33,7 @@ This project is meant to be as unassuming and bare bones as possible, providing 
 | **background** (coming soon)    | `String`            | `'images/background.png'`  | Path to either an image or video (mp4) asset. Providing a video asset will generate a looping background video                  |
 | **screensaver**   | `String`            | `'videos/screensaver.mp4'` | Path to video asset which displays on loop during screensaver mode.                                              |
 | **animation** (coming soon)     | `Boolean`           | `true`                     | Enables default animations for all buttons on press                       |
+
+
+
+Note about gitignore: Because the files are so small, the gitignore includes exceptions for the example video files. You should either remove the exception, or simply use different file names for your videos.

@@ -68,7 +68,12 @@ class VideoSelector {
     fullscreenPlayer += "</div>";
 
     // Add to DOM
-    $('body').append(fullscreenPlayer);
+    let myy = $('body').append(fullscreenPlayer);
+
+    $('#fullscreen_video').on('ended', () => {
+      console.log('Video has ended!');
+      this.hideSelectedVideo();
+    });
 
   }
 
@@ -121,7 +126,7 @@ class VideoSelector {
   }
 
   getVidDiv(id, src) {
-    const vidDiv = "<video id='"+id+"' width='"+this.width+"' height='"+this.height+"' autoPlay='autoplay' loop><source src='"+src+"' type='video/mp4'/></video>";
+    const vidDiv = "<video id='"+id+"' width='"+this.width+"' height='"+this.height+"' autoPlay='autoplay'><source src='"+src+"' type='video/mp4'/></video>";
     return vidDiv;
   }
 
