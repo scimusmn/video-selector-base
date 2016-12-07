@@ -1,6 +1,6 @@
 # video-selector-base
 
-This project is a starting place for future SMM video selectors, providing a code base for customization. Replace the example assets and adjust for your needs using CSS and Javascript.
+This project is a starting place for future SMM video selectors. Replace the example assets and customize for you needs using CSS and Javascript.
 
 To begin, clone this repository and copy all folder contents (except the hidden .git folder) into an empty repo folder.
 * TODO - explain cloning into empty repo in more detail.
