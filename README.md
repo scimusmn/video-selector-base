@@ -15,7 +15,7 @@ For example, the following creates a simple text buton that will launch `videos/
 ```
 
 You can position and style video buttons with CSS. You may want to add unique ids or class names for targeting. All other video selector functionality can be changed through passing options into the constructor of the Video Selector.
-For example, if I wanted the screensaver to show up after two minutes of inactivity, and wanted my background to be an online image of Stonehenge, I would use the following.
+For example, if you wanted the screensaver to show up after two minutes and your background to be an online image of Stonehenge, use the following.
 ```
 const options = { timeoutSecs:120,
                   background:'http://www.crystalinks.com/stonehengewalkway.jpg', };
