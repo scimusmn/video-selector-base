@@ -1,13 +1,9 @@
 # video-selector-base
 
-This project is a starting place for future video selectors, providing a code base for customization. The simplest way to use this template is to simply replace the existing assets. However, full customization is possible by jumping into the CSS and Javascript.
+This project is a starting place for future video selectors, providing a code base for customization. Simply replace existing assets or fully customize using CSS and Javascript.
 
 To begin, clone this repository and copy all folder contents (except the hidden .git folder) into an empty repo folder.
 * TODO - explain cloning into empty repo in more detail.
-
-# Assumptions
-* Videos are in web friendly MP4 format
-* Videos will play fullscreen
 
 # Video Buttons
 Any div with the class `video-button` can be used to trigger a fullscreen video. Ensure your div also has a `video-path` attribute that points to the video file you'd like to play when this button is clicked. Any other content you place within the opening and closing div tags of the video button will become part of the button.
