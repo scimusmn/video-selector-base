@@ -10,8 +10,8 @@ class VideoSelector {
     this.animation = options.animation; // Defaults to false
     this.hideCursor = options.hideCursor; // Defaults to false
 
-    this.width = options.width || 1920;
-    this.height = options.height || 1080;
+    this.vidWidth = options.vidWidth || 1920;
+    this.vidHeight = options.vidHeight || 1080;
 
     this.readyVideoPlayer();
 
@@ -114,12 +114,11 @@ class VideoSelector {
 
   addBackground() {
 
-    console.log('addBackground', this.background);
-
-    const bg = "<img id='background' class='background' src='" + this.background + "'/>";
+    let bg = '';
 
     if(this.background.indexOf('.mp4') == -1) {
       // Assume image background'
+      bg = "<img id='background' class='background' src='" + this.background + "'/>";
     } else {
       // Setup video backgroound
       // TODO - Add div tag
@@ -157,7 +156,7 @@ class VideoSelector {
   }
 
   getVidDiv(id, src) {
-    const vidDiv = "<video id='"+id+"' width='"+this.width+"' height='"+this.height+"' autoPlay='autoplay'><source src='"+src+"' type='video/mp4'/></video>";
+    const vidDiv = "<video id='" + id + "' width='" + this.vidWidth + "' height='" + this.vidHeight + "' autoPlay='autoplay'><source src='" + src + "' type='video/mp4'/></video>";
     return vidDiv;
   }
 
