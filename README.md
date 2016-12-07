@@ -6,16 +6,16 @@ To begin, clone this repository and copy all folder contents (except the hidden 
 * TODO - explain cloning into empty repo in more detail.
 
 # Video Buttons
-Any div with the class `video-button` can be used to trigger a fullscreen video. Ensure your div also has a `video-path` attribute that points to the video file you'd like to play when this button is clicked. Any other content you place within the opening and closing div tags of the video button will become part of the button.
-For example, the following creates a simple text buton that will launch `videos/video_1.mp4` when clicked.
+Any `<div>` node with the class `video-button` can be used to trigger a video so long as it has a `video-path` attribute, pathing to the video file you'd like played. Any html nested inside the Video Button div will become part of the button's clickable area.
+For example, the following creates a simple text button that launches `videos/video_1.mp4` when clicked.
 ```
 <div class='video-button' video-path='videos/video_1.mp4'>
   Click me to play video.
 </div>
 ```
 
-You can position and style video buttons with CSS. You may want to add unique ids or class names for targeting. All other video selector functionality can be changed through passing options into the constructor of the Video Selector.
-For example, if you wanted the screensaver to show up after two minutes and your background to be an online image of Stonehenge, use the following.
+You can position and style video buttons using CSS (see `css/main.css`). You may want to add unique ids or class names for targeting. All other video selector functionality can be changed through options passed into the constructor of the Video Selector.
+For example, if you wanted the screensaver to show up after two minutes and your background to be an image of Stonehenge, use the following.
 ```
 const options = { timeoutSecs:120,
                   background:'http://www.crystalinks.com/stonehengewalkway.jpg', };
