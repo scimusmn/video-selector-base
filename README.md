@@ -39,4 +39,4 @@ new VideoSelector(options);
 
 
 ## .gitignore
-I've included example videos because the files are small and useful while getting started. Videos are usually not pushed to git. After replacing these assets, you should remove their filename exceptions from `.gitignore` so you don't push your own larger video files.
+I've included example videos because they can be useful while getting started. After replacing these assets, you should remove their filename exceptions from `.gitignore` so you don't push your own larger video files.
