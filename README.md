@@ -1,6 +1,6 @@
 # video-selector-base
 
-This project is a starting place for future video selectors, providing a code base for customization. Simply replace existing assets or fully customize using CSS and Javascript.
+This project is a starting place for future SMM video selectors, providing a code base for customization. Replace the example assets and adjust for your needs using CSS and Javascript.
 
 To begin, clone this repository and copy all folder contents (except the hidden .git folder) into an empty repo folder.
 * TODO - explain cloning into empty repo in more detail.
@@ -39,4 +39,4 @@ new VideoSelector(options);
 
 
 ## .gitignore
-Because the files are so small and useful for starting, I've included example videos which are usually not pushed to git. After replacing these assets, you should either remove the exceptions for these filenames from `.gitignore`, or just use different filenames for your videos.
+Because the files are so small and useful for starting, I've included example videos which are usually not pushed to git. After replacing these assets, you should either remove the exceptions for these filenames from `.gitignore`, or use different filenames.
