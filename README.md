@@ -14,8 +14,8 @@ For example, the following creates a simple text button that launches `videos/vi
 </div>
 ```
 
-You can position and style video buttons using CSS (`css/main.css`). You may want to add unique ids or class names for targeting. All other video selector functionality can be changed through options passed into the constructor of the Video Selector.
-For example, if you wanted the screensaver to show up after two minutes and your background to be an image of Stonehenge, use the following.
+You can position and style video buttons using CSS (`css/main.css`). You may want to add unique ids or class names for targeting. Other functionality can be changed through options passed into the constructor of the Video Selector.
+For example, if you want the screensaver to show up after two minutes, and your background an image of Stonehenge, use the following.
 ```
 const options = { timeoutSecs:120,
                   background:'http://www.crystalinks.com/stonehengewalkway.jpg', };
