@@ -9,9 +9,9 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   this.timeoutSeconds = timeoutSeconds || 60;
 
   //Callback functions to reset external
-  this.onSleepCallback = onSleepCallback || function() {};
+  this.onSleepCallback = onSleepCallback || function () {};
 
-  this.onAwakeCallback = onAwakeCallback || function() {};
+  this.onAwakeCallback = onAwakeCallback || function () {};
 
   // Start the clock
   this.idleTime = 0;
@@ -21,10 +21,10 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   var thisRef = this;
 
   // Increment the idle time counter every minute.
-  this.idleInterval = setInterval(function() { thisRef.timerIncrement() }, 1000);// 1 second
+  this.idleInterval = setInterval(function () { thisRef.timerIncrement(); }, 1000);// 1 second
 
   // Zero the idle timer on any movement.
-  $('body').on('touchstart keypress mousemove mousedown', function() { thisRef.anyAction() });
+  $('body').on('touchstart keypress mousemove mousedown', function () { thisRef.anyAction(); });
 
   // Setup video screensaver
   this.createVideo(videoSrc);
@@ -37,23 +37,23 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 /**
 * Setup fullscreen looping video to be shown during sleep.
 */
-Screensaver.prototype.createVideo = function(videoSrc) {
+Screensaver.prototype.createVideo = function (videoSrc) {
 
   // Create video tag
   var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" loop ><source src="' + videoSrc + '" type="video/mp4" /></video>';
-  var videoOptions = { 'controls': false, 'autoplay': false, 'loop': 'true', 'preload': 'auto' };
+  var videoOptions = { controls: false, autoplay: false, loop: 'true', preload: 'auto' };
 
   // Append to html
   $('body').append(videoTag);
 
   this.videoPlayer = $('#screensaver_video');
 
-}
+};
 
 /**
 * Start the screensaver after X seconds of inactivity.
 */
-Screensaver.prototype.timerIncrement = function() {
+Screensaver.prototype.timerIncrement = function () {
 
   //Increment counter
   this.idleTime = this.idleTime + 1;
@@ -65,12 +65,12 @@ Screensaver.prototype.timerIncrement = function() {
 
   }
 
-}
+};
 
 /**
  * Zero the idle timer on any movement.
  */
-Screensaver.prototype.anyAction = function() {
+Screensaver.prototype.anyAction = function () {
 
   this.idleTime = 0;
 
@@ -80,12 +80,12 @@ Screensaver.prototype.anyAction = function() {
 
   }
 
-}
+};
 
 /**
 * Display the screensaver
 */
-Screensaver.prototype.sleep = function() {
+Screensaver.prototype.sleep = function () {
 
   this.active = true;
   this.onSleepCallback();
@@ -94,21 +94,21 @@ Screensaver.prototype.sleep = function() {
   $('#screensaver_video').fadeIn('slow');
   this.videoPlayer[0].play();
 
-}
+};
 
 /**
  * Remove the screensaver
  */
-Screensaver.prototype.awake = function() {
+Screensaver.prototype.awake = function () {
 
   this.active = false;
   this.onAwakeCallback();
 
   // Hide the video
   var thisRef = this;
-  $('#screensaver_video').fadeOut('slow', function() {
+  $('#screensaver_video').fadeOut('slow', function () {
     thisRef.videoPlayer[0].pause();
   });
 
-}
+};
 

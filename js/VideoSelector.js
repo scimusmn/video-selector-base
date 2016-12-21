@@ -47,7 +47,7 @@ class VideoSelector {
 
     // Attach click listeners
     const _this = this;
-    $('.video-button').on('click', function(event) {
+    $('.video-button').on('click', function (event) {
 
       // Launch fullscreen video player
       var src = $(this).attr('video-path');
@@ -57,7 +57,7 @@ class VideoSelector {
     });
 
     // Home button
-    $('.home-btn').on('click', function() {
+    $('.home-btn').on('click', function () {
 
       _this.hideSelectedVideo();
 
@@ -75,7 +75,7 @@ class VideoSelector {
 
     fullscreenPlayer += "<div class='home-btn' data-role='button'></div>";
 
-    fullscreenPlayer += "</div>";
+    fullscreenPlayer += '</div>';
 
     // Add to DOM
     let myy = $('body').append(fullscreenPlayer);
@@ -94,14 +94,14 @@ class VideoSelector {
     // 3 minute screensaver timeout (one minute more than longest video)
     const saver = new Screensaver(this.timeoutSecs, this.screensaver,
 
-      function() {
+      function () {
 
         // Going to screensaver
         // TODO - Stop background video (if needed)
 
       },
 
-      function() {
+      function () {
 
         // Awaking from screensaver
         // TODO - Start the background video (if needed)
@@ -116,7 +116,7 @@ class VideoSelector {
 
     let bg = '';
 
-    if(this.background.indexOf('.mp4') == -1) {
+    if (this.background.indexOf('.mp4') == -1) {
       // Assume image background'
       bg = "<img id='background' class='background' src='" + this.background + "'/>";
     } else {
@@ -145,7 +145,7 @@ class VideoSelector {
   hideSelectedVideo() {
 
     // Hide the video
-    $('#player_screen').fadeOut('fast', function() {
+    $('#player_screen').fadeOut('fast', function () {
       const player = $('#fullscreen_video');
       player[0].pause();
       $('#player_screen').hide();
@@ -159,6 +159,5 @@ class VideoSelector {
     const vidDiv = "<video id='" + id + "' width='" + this.vidWidth + "' height='" + this.vidHeight + "' autoPlay='autoplay'><source src='" + src + "' type='video/mp4'/></video>";
     return vidDiv;
   }
-
 
 }
