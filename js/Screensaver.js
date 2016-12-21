@@ -44,7 +44,7 @@ Screensaver.prototype.createVideo = function (videoSrc) {
   // Create video tag
   var videoTag = '<video ' +
     'id="screensaver_video" ' +
-    'style="position:fixed; top:0px; left:0px; z-index:999;"' +
+    'style="position:fixed; top:0; left:0; z-index:999;"' +
     'loop >' +
     '<source src="' + videoSrc + '" type="video/mp4" />' +
     '</video>';
