@@ -18,13 +18,15 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   this.active = false;
   this.videoPlayer = {};
 
-  var thisRef = this;
-
   // Increment the idle time counter every minute.
-  this.idleInterval = setInterval(function () { thisRef.timerIncrement(); }, 1000);// 1 second
+  this.idleInterval = setInterval(function () {
+    this.timerIncrement();
+  }.bind(this), 1000);// 1 second
 
   // Zero the idle timer on any movement.
-  $('body').on('touchstart keypress mousemove mousedown', function () { thisRef.anyAction(); });
+  $('body').on('touchstart keypress mousemove mousedown', function () {
+    this.anyAction();
+  }.bind(this));
 
   // Setup video screensaver
   this.createVideo(videoSrc);
@@ -105,10 +107,9 @@ Screensaver.prototype.awake = function () {
   this.onAwakeCallback();
 
   // Hide the video
-  var thisRef = this;
   $('#screensaver_video').fadeOut('slow', function () {
-    thisRef.videoPlayer[0].pause();
-  });
+    this.videoPlayer[0].pause();
+  }.bind(this));
 
 };
 
