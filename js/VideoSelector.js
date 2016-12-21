@@ -92,7 +92,7 @@ class VideoSelector {
     console.log('readyScreensaver', this.screensaver);
 
     // 3 minute screensaver timeout (one minute more than longest video)
-    return saver = new Screensaver(this.timeoutSecs, this.screensaver,
+    return new Screensaver(this.timeoutSecs, this.screensaver,
 
       function () {
 
@@ -154,7 +154,7 @@ class VideoSelector {
   }
 
   getVidDiv(id, src) {
-    return vidDiv = '<video id="' + id + '" ' +
+    return '<video id="' + id + '" ' +
       'width="' + this.vidWidth + '" ' +
       'height="' + this.vidHeight + '" ' +
       'autoPlay="autoplay">' +
