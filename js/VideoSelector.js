@@ -131,14 +131,14 @@ class VideoSelector {
 
   showSelectedVideo(src) {
 
-    const player = $('#fullscreen_video');
-    const source = player.children('source');
-    player[0].pause();
+    const $player = $('#fullscreen_video');
+    const source = $player.children('source');
+    $player[0].pause();
     console.log('src', src);
     source.attr('src', src);
 
     $('#player_screen').show();
-    player.load();
+    $player.load();
 
   }
 
