@@ -120,7 +120,7 @@ class VideoSelector {
     } else {
       // Setup video backgroound
       // TODO - Add div tag
-    }
+    }// jscs:ignore
 
     // Add to DOM
     $('body').prepend(bg);
