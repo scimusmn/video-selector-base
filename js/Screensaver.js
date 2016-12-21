@@ -42,7 +42,12 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 Screensaver.prototype.createVideo = function (videoSrc) {
 
   // Create video tag
-  var videoTag = '<video id="screensaver_video" style="position:fixed; top:0px; left:0px; z-index:999;" loop ><source src="' + videoSrc + '" type="video/mp4" /></video>';
+  var videoTag = '<video ' +
+    'id="screensaver_video" ' +
+    'style="position:fixed; top:0px; left:0px; z-index:999;"' +
+    'loop >' +
+    '<source src="' + videoSrc + '" type="video/mp4" />' +
+    '</video>';
   var videoOptions = { controls: false, autoplay: false, loop: 'true', preload: 'auto' };
 
   // Append to html
