@@ -92,7 +92,7 @@ class VideoSelector {
     console.log('readyScreensaver', this.screensaver);
 
     // 3 minute screensaver timeout (one minute more than longest video)
-    const saver = new Screensaver(this.timeoutSecs, this.screensaver,
+    return saver = new Screensaver(this.timeoutSecs, this.screensaver,
 
       function () {
 
@@ -107,8 +107,6 @@ class VideoSelector {
         // TODO - Start the background video (if needed)
 
       });
-
-    return saver;
 
   }
 
@@ -156,13 +154,12 @@ class VideoSelector {
   }
 
   getVidDiv(id, src) {
-    const vidDiv = '<video id="' + id + '" ' +
+    return vidDiv = '<video id="' + id + '" ' +
       'width="' + this.vidWidth + '" ' +
       'height="' + this.vidHeight + '" ' +
       'autoPlay="autoplay">' +
       '<source src="' + src + '" type="video/mp4"/>' +
       '</video>';
-    return vidDiv;
   }
 
 }
