@@ -16,7 +16,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   // Start the clock
   this.idleTime = 0;
   this.active = false;
-  this.videoPlayer = {};
+  this.$videoPlayer = {};
 
   // Increment the idle time counter every minute.
   this.idleInterval = setInterval(function () {
@@ -48,7 +48,7 @@ Screensaver.prototype.createVideo = function (videoSrc) {
   // Append to html
   $('body').append(videoTag);
 
-  this.videoPlayer = $('#screensaver_video');
+  this.$videoPlayer = $('#screensaver_video');
 
 };
 
@@ -94,7 +94,7 @@ Screensaver.prototype.sleep = function () {
 
   // Show the video
   $('#screensaver_video').fadeIn('slow');
-  this.videoPlayer[0].play();
+  this.$videoPlayer[0].play();
 
 };
 
@@ -108,7 +108,7 @@ Screensaver.prototype.awake = function () {
 
   // Hide the video
   $('#screensaver_video').fadeOut('slow', function () {
-    this.videoPlayer[0].pause();
+    this.$videoPlayer[0].pause();
   }.bind(this));
 
 };

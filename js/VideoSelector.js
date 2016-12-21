@@ -146,8 +146,8 @@ class VideoSelector {
 
     // Hide the video
     $('#player_screen').fadeOut('fast', function () {
-      const player = $('#fullscreen_video');
-      player[0].pause();
+      const $player = $('#fullscreen_video');
+      $player[0].pause();
       $('#player_screen').hide();
     });
 
