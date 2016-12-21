@@ -156,7 +156,12 @@ class VideoSelector {
   }
 
   getVidDiv(id, src) {
-    const vidDiv = "<video id='" + id + "' width='" + this.vidWidth + "' height='" + this.vidHeight + "' autoPlay='autoplay'><source src='" + src + "' type='video/mp4'/></video>";
+    const vidDiv = '<video id="' + id + '" ' +
+      'width="' + this.vidWidth + '" ' +
+      'height="' + this.vidHeight + '" ' +
+      'autoPlay="autoplay">' +
+      '<source src="' + src + '" type="video/mp4"/>' +
+      '</video>';
     return vidDiv;
   }
 
