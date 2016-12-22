@@ -66,11 +66,8 @@ class VideoSelector {
     console.log('readyVideoPlayer');
 
     let fullscreenPlayer = "<div id='player_screen' class='screen' style='display:none;'>";
-
     fullscreenPlayer += this.getVidDiv('fullscreen_video', '');
-
     fullscreenPlayer += "<div class='home-btn' data-role='button'></div>";
-
     fullscreenPlayer += '</div>';
 
     // Add to DOM
