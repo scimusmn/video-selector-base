@@ -51,16 +51,12 @@ class VideoSelector {
 
       // Launch fullscreen video player
       var src = $(this).attr('video-path');
-
       _this.showSelectedVideo(src);
-
     });
 
     // Home button
     $('.home-btn').on('click', function () {
-
       _this.hideSelectedVideo();
-
     });
 
   }
