@@ -50,7 +50,7 @@ class VideoSelector {
     $('.video-button').on('click', function () {
 
       // Launch fullscreen video player
-      var src = $(this).attr('video-path');
+      const src = $(this).attr('video-path');
       _this.showSelectedVideo(src);
     });
 
