@@ -47,7 +47,7 @@ class VideoSelector {
 
     // Attach click listeners
     const _this = this;
-    $('.video-button').on('click', function (event) {
+    $('.video-button').on('click', function () {
 
       // Launch fullscreen video player
       var src = $(this).attr('video-path');
