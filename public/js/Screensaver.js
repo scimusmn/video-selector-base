@@ -36,9 +36,8 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
  * Setup full-screen looping video to be shown during sleep.
  */
 Screensaver.prototype.createVideo = function (videoSrc) {
-
   // Create video tag
-  let videoTag = '<video ' +
+  const videoTag = '<video ' +
     'id="screensaver_video" ' +
     'style="position:fixed; top:0; left:0; z-index:999;"' +
     'loop >' +
@@ -46,7 +45,7 @@ Screensaver.prototype.createVideo = function (videoSrc) {
     '</video>';
 
   // TODO: Implement or remove
-  let videoOptions = {
+  const videoOptions = {
     controls: false,
     autoplay: false,
     loop: 'true',
