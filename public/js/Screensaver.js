@@ -20,14 +20,18 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   this.$videoPlayer = {};
 
   // Increment the idle time counter every minute.
-  this.idleInterval = setInterval(function () {
+  this.idleInterval = setInterval(() => {
     this.timerIncrement();
-  }.bind(this), 1000);// 1 second
+  }, 1000);// 1 second
+
+  // this.idleInterval = setInterval(function () {
+  //   this.timerIncrement();
+  // }.bind(this), 1000);// 1 second
 
   // Zero the idle timer on any movement.
-  $('body').on('touchstart keypress mousemove mousedown', function () {
+  $('body').on('touchstart keypress mousemove mousedown', () => {
     this.anyAction();
-  }.bind(this));
+  });
 
   // Setup video screensaver
   this.createVideo(videoSrc);
