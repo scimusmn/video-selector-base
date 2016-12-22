@@ -5,9 +5,13 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   // Timeout length in seconds
   this.timeoutSeconds = timeoutSeconds || 60;
 
-  // Callback functions to reset external
+  /**
+   * Callback functions to reset external
+   * TODO: Name these anonymous functions
+   * Raises a linting error
+   * http://eslint.org/docs/rules/func-names
+   */
   this.onSleepCallback = onSleepCallback || function () {};
-
   this.onAwakeCallback = onAwakeCallback || function () {};
 
   // Start the clock
