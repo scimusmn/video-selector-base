@@ -38,9 +38,9 @@ class VideoSelector {
 
   readyVideoButtons() {
     // Attach click listeners
-    $('.video-button').on('click', function () {
+    $('.video-button').on('click', (event) => {
       // Launch fullscreen video player
-      const src = $(this).attr('video-path');
+      const src = $(event.currentTarget).attr('video-path');
       VideoSelector.showSelectedVideo(src);
     });
 
@@ -73,12 +73,12 @@ class VideoSelector {
     // 3 minute screensaver timeout (one minute more than longest video)
     return new Screensaver(this.timeoutSecs, this.screensaver,
 
-      function () {
+      () => {
         // Going to screensaver
         // TODO - Stop background video (if needed)
       },
 
-      function () {
+      () => {
         // Awaking from screensaver
         // TODO - Start the background video (if needed)
       });
@@ -112,7 +112,7 @@ class VideoSelector {
 
   hideSelectedVideo() {
     // Hide the video
-    $('#player_screen').fadeOut('fast', function () {
+    $('#player_screen').fadeOut('fast', () => {
       const $player = $('#fullscreen_video');
       $player[0].pause();
       $('#player_screen').hide();
