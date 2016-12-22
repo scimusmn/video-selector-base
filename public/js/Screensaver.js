@@ -61,7 +61,7 @@ Screensaver.prototype.createVideo = function createVideoTag(videoSrc) {
 /**
  * Start the screensaver after X seconds of inactivity.
  */
-Screensaver.prototype.timerIncrement = function () {
+Screensaver.prototype.timerIncrement = function timerIncrementCounter() {
   // Increment counter
   this.idleTime = this.idleTime + 1;
 
@@ -74,7 +74,7 @@ Screensaver.prototype.timerIncrement = function () {
 /**
  * Zero the idle timer on any movement.
  */
-Screensaver.prototype.anyAction = function () {
+Screensaver.prototype.anyAction = function zeroScreensaverTimer() {
   this.idleTime = 0;
   if (this.active === true) {
     this.awake();
@@ -84,7 +84,7 @@ Screensaver.prototype.anyAction = function () {
 /**
 * Display the screensaver
 */
-Screensaver.prototype.sleep = function () {
+Screensaver.prototype.sleep = function sleepScreensaver() {
   this.active = true;
   this.onSleepCallback();
 
