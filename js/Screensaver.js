@@ -1,8 +1,6 @@
-
 /**
-* Screensaver
-*/
-
+ * Screensaver
+ */
 function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback) {
 
   // How long is timeout.
@@ -33,12 +31,11 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 
   // Default to hidden screensaver
   this.awake();
-
 }
 
 /**
-* Setup full-screen looping video to be shown during sleep.
-*/
+ * Setup full-screen looping video to be shown during sleep.
+ */
 Screensaver.prototype.createVideo = function (videoSrc) {
 
   // Create video tag
@@ -58,8 +55,8 @@ Screensaver.prototype.createVideo = function (videoSrc) {
 };
 
 /**
-* Start the screensaver after X seconds of inactivity.
-*/
+ * Start the screensaver after X seconds of inactivity.
+ */
 Screensaver.prototype.timerIncrement = function () {
 
   //Increment counter
@@ -78,15 +75,10 @@ Screensaver.prototype.timerIncrement = function () {
  * Zero the idle timer on any movement.
  */
 Screensaver.prototype.anyAction = function () {
-
   this.idleTime = 0;
-
   if (this.active == true) {
-
     this.awake();
-
   }
-
 };
 
 /**

@@ -9,7 +9,6 @@ class VideoSelector {
     this.background = options.background || 'images/background.png';
     this.animation = options.animation; // Defaults to false
     this.hideCursor = options.hideCursor; // Defaults to false
-
     this.vidWidth = options.vidWidth || 1920;
     this.vidHeight = options.vidHeight || 1080;
 
@@ -32,13 +31,9 @@ class VideoSelector {
 
     // Hide or show cursor
     if (this.hideCursor) {
-
       $('body').css('cursor', 'none');
-
     } else {
-
       $('body').css('cursor', 'auto');
-
     }
 
   }
@@ -88,23 +83,18 @@ class VideoSelector {
     return new Screensaver(this.timeoutSecs, this.screensaver,
 
       function () {
-
         // Going to screensaver
         // TODO - Stop background video (if needed)
-
       },
 
       function () {
-
         // Awaking from screensaver
         // TODO - Start the background video (if needed)
-
       });
 
   }
 
   addBackground() {
-
     let bg = '';
 
     if (this.background.indexOf('.mp4') == -1) {
@@ -117,7 +107,6 @@ class VideoSelector {
 
     // Add to DOM
     $('body').prepend(bg);
-
   }
 
   showSelectedVideo(src) {
