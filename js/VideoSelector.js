@@ -71,7 +71,7 @@ class VideoSelector {
     fullscreenPlayer += '</div>';
 
     // Add to DOM
-    let myy = $('body').append(fullscreenPlayer);
+    $('body').append(fullscreenPlayer);
 
     $('#fullscreen_video').on('ended', () => {
       console.log('Video has ended!');
