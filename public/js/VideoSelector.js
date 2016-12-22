@@ -90,7 +90,7 @@ class VideoSelector {
 
     if (this.background.indexOf('.mp4') === -1) {
       // Assume image background'
-      bg = "<img id='background' class='background' src='" + this.background + "'/>";
+      bg = `<img id="background" class="background" src="${this.background}"/>`;
     } else {
       // Setup video background
       // TODO - Add div tag
