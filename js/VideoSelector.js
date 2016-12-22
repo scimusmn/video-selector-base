@@ -42,7 +42,7 @@ class VideoSelector {
 
     // Attach click listeners
     const _this = this;
-    $('.video-button').on('click', function () {
+    $('.video-button').on('click', function() {
 
       // Launch fullscreen video player
       const src = $(this).attr('video-path');
@@ -125,7 +125,7 @@ class VideoSelector {
   hideSelectedVideo() {
 
     // Hide the video
-    $('#player_screen').fadeOut('fast', function () {
+    $('#player_screen').fadeOut('fast', function() {
       const $player = $('#fullscreen_video');
       $player[0].pause();
       $('#player_screen').hide();
