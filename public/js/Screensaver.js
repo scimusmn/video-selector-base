@@ -14,7 +14,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
   this.onSleepCallback = onSleepCallback || function () {};
   this.onAwakeCallback = onAwakeCallback || function () {};
 
-  // Start the clock
+  // Start the screensaver clock
   this.idleTime = 0;
   this.active = false;
   this.$videoPlayer = {};
