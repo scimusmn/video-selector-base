@@ -70,7 +70,7 @@ Screensaver.prototype.timerIncrement = function () {
   this.idleTime = this.idleTime + 1;
 
   // If it's been X seconds of inactivity, save the screen
-  if (this.idleTime > this.timeoutSeconds && this.active == false) {
+  if (this.idleTime > this.timeoutSeconds && this.active === false) {
     this.sleep();
   }
 };
@@ -80,7 +80,7 @@ Screensaver.prototype.timerIncrement = function () {
  */
 Screensaver.prototype.anyAction = function () {
   this.idleTime = 0;
-  if (this.active == true) {
+  if (this.active === true) {
     this.awake();
   }
 };
