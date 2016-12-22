@@ -1,7 +1,6 @@
 class VideoSelector {
 
   constructor(options) {
-
     // Collect options
     // (values on right are defaults)
     this.timeoutSecs = options.timeoutSecs || 60;
@@ -35,15 +34,12 @@ class VideoSelector {
     } else {
       $('body').css('cursor', 'auto');
     }
-
   }
 
   readyVideoButtons() {
-
     // Attach click listeners
     const _this = this;
     $('.video-button').on('click', function () {
-
       // Launch fullscreen video player
       const src = $(this).attr('video-path');
       VideoSelector.showSelectedVideo(src);
@@ -53,11 +49,9 @@ class VideoSelector {
     $('.home-btn').on('click', function () {
       _this.hideSelectedVideo();
     });
-
   }
 
   readyVideoPlayer() {
-
     console.log('readyVideoPlayer');
 
     let fullscreenPlayer = "<div id='player_screen' class='screen' style='display:none;'>";
@@ -72,11 +66,9 @@ class VideoSelector {
       console.log('Video has ended!');
       this.hideSelectedVideo();
     });
-
   }
 
   readyScreensaver() {
-
     console.log('readyScreensaver', this.screensaver);
 
     // 3 minute screensaver timeout (one minute more than longest video)
@@ -91,7 +83,6 @@ class VideoSelector {
         // Awaking from screensaver
         // TODO - Start the background video (if needed)
       });
-
   }
 
   addBackground() {
@@ -110,7 +101,6 @@ class VideoSelector {
   }
 
   static showSelectedVideo(src) {
-
     const $player = $('#fullscreen_video');
     const source = $player.children('source');
     $player[0].pause();
@@ -119,11 +109,9 @@ class VideoSelector {
 
     $('#player_screen').show();
     $player.load();
-
   }
 
   hideSelectedVideo() {
-
     // Hide the video
     $('#player_screen').fadeOut('fast', function () {
       const $player = $('#fullscreen_video');
@@ -132,7 +120,6 @@ class VideoSelector {
     });
 
     if (this.saver) this.saver.anyAction();
-
   }
 
   getVidDiv(id, src) {
