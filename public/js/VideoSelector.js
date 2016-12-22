@@ -15,7 +15,7 @@ class VideoSelector {
 
     // Disable screensaver when
     // empties are passed.
-    if (this.timeoutSecs == 0 || this.screensaver == '') {
+    if (this.timeoutSecs === 0 || this.screensaver === '') {
       this.timeoutSecs = 0;
       this.screensaver = '';
     } else {
@@ -88,7 +88,7 @@ class VideoSelector {
   addBackground() {
     let bg = '';
 
-    if (this.background.indexOf('.mp4') == -1) {
+    if (this.background.indexOf('.mp4') === -1) {
       // Assume image background'
       bg = "<img id='background' class='background' src='" + this.background + "'/>";
     } else {
