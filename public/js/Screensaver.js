@@ -2,7 +2,7 @@
  * Screensaver
  */
 function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback) {
-  // How long is timeout.
+  // Timeout length in seconds
   this.timeoutSeconds = timeoutSeconds || 60;
 
   // Callback functions to reset external
