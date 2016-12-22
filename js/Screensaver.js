@@ -45,7 +45,14 @@ Screensaver.prototype.createVideo = function (videoSrc) {
     'loop >' +
     '<source src="' + videoSrc + '" type="video/mp4" />' +
     '</video>';
-  var videoOptions = { controls: false, autoplay: false, loop: 'true', preload: 'auto' };
+
+  // TODO: Implement or remove
+  let videoOptions = {
+    controls: false,
+    autoplay: false,
+    loop: 'true',
+    preload: 'auto',
+  };
 
   // Append to html
   $('body').append(videoTag);
