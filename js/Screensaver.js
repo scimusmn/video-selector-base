@@ -37,7 +37,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 }
 
 /**
-* Setup fullscreen looping video to be shown during sleep.
+* Setup full-screen looping video to be shown during sleep.
 */
 Screensaver.prototype.createVideo = function (videoSrc) {
 
