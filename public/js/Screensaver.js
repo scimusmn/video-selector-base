@@ -45,12 +45,11 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
  */
 Screensaver.prototype.createVideo = function (videoSrc) {
   // Create video tag
-  const videoTag = '<video ' +
-    'id="screensaver_video" ' +
-    'style="position:fixed; top:0; left:0; z-index:999;"' +
-    'loop >' +
-    '<source src="' + videoSrc + '" type="video/mp4" />' +
-    '</video>';
+  const videoTag = `<video id="screensaver_video" \
+    style="position:fixed; top:0; left:0; z-index:999;" \
+    loop >\
+    <source src="${videoSrc}" type="video/mp4" />\
+    </video>`;
 
   // TODO: Implement or remove
   const videoOptions = {
