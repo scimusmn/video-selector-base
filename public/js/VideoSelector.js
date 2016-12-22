@@ -38,7 +38,6 @@ class VideoSelector {
 
   readyVideoButtons() {
     // Attach click listeners
-    const _this = this;
     $('.video-button').on('click', function () {
       // Launch fullscreen video player
       const src = $(this).attr('video-path');
@@ -46,8 +45,8 @@ class VideoSelector {
     });
 
     // Home button
-    $('.home-btn').on('click', function () {
-      _this.hideSelectedVideo();
+    $('.home-btn').on('click', () => {
+      this.hideSelectedVideo();
     });
   }
 
