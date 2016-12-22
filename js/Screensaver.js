@@ -39,7 +39,7 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
 Screensaver.prototype.createVideo = function (videoSrc) {
 
   // Create video tag
-  var videoTag = '<video ' +
+  let videoTag = '<video ' +
     'id="screensaver_video" ' +
     'style="position:fixed; top:0; left:0; z-index:999;"' +
     'loop >' +
