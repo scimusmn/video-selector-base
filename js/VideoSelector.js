@@ -46,7 +46,7 @@ class VideoSelector {
 
       // Launch fullscreen video player
       const src = $(this).attr('video-path');
-      _this.showSelectedVideo(src);
+      VideoSelector.showSelectedVideo(src);
     });
 
     // Home button
@@ -109,7 +109,7 @@ class VideoSelector {
     $('body').prepend(bg);
   }
 
-  showSelectedVideo(src) {
+  static showSelectedVideo(src) {
 
     const $player = $('#fullscreen_video');
     const source = $player.children('source');
