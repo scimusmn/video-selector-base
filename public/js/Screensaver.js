@@ -96,13 +96,13 @@ Screensaver.prototype.sleep = function sleepScreensaver() {
 /**
  * Remove the screensaver
  */
-Screensaver.prototype.awake = function () {
+Screensaver.prototype.awake = function wakeScreensaver() {
   this.active = false;
   this.onAwakeCallback();
 
   // Hide the video
-  $('#screensaver_video').fadeOut('slow', function () {
+  $('#screensaver_video').fadeOut('slow', () => {
     this.$videoPlayer[0].pause();
-  }.bind(this));
+  });
 };
 
