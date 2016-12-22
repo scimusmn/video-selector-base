@@ -48,6 +48,7 @@ Screensaver.prototype.createVideo = function createVideoTag(videoSrc) {
     </video>`;
 
   // TODO: Implement or remove
+  // This is currently unused
   const videoOptions = {
     controls: false,
     autoplay: false,
