@@ -24,10 +24,6 @@ function Screensaver(timeoutSeconds, videoSrc, onSleepCallback, onAwakeCallback)
     this.timerIncrement();
   }, 1000);// 1 second
 
-  // this.idleInterval = setInterval(function () {
-  //   this.timerIncrement();
-  // }.bind(this), 1000);// 1 second
-
   // Zero the idle timer on any movement.
   $('body').on('touchstart keypress mousemove mousedown', () => {
     this.anyAction();
