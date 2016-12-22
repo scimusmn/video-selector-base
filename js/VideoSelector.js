@@ -114,7 +114,7 @@ class VideoSelector {
       // Assume image background'
       bg = "<img id='background' class='background' src='" + this.background + "'/>";
     } else {
-      // Setup video backgroound
+      // Setup video background
       // TODO - Add div tag
     }// jscs:ignore
 
