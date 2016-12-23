@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/scimusmn/video-selector-base#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "winston": "^2.3.0"
   }
