@@ -1,3 +1,11 @@
+function processEventData(event) {
+  const data = {};
+  data.clientX = event.clientX;
+  data.clientY = event.clientY;
+  data.video = event.currentTarget.id;
+  return data;
+}
+
 class VideoSelector {
 
   constructor(options) {
@@ -39,6 +47,14 @@ class VideoSelector {
   readyVideoButtons() {
     // Attach click listeners
     $('.video-button').on('click', (event) => {
+      const eventData = processEventData(event);
+      $.ajax({
+        type: 'POST',
+        url: '/event',
+        contentType: 'application/json',
+        data: JSON.stringify(eventData),
+      });
+
       // Launch fullscreen video player
       const src = $(event.currentTarget).attr('video-path');
       VideoSelector.showSelectedVideo(src);
