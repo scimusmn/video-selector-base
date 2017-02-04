@@ -1,26 +1,11 @@
 [{
 	"_id": "7mLCuiSyHTbTyBS8g",
-	"title": "Nutrition",
-	"componentNumber": "0600"
-},
-{
-	"_id": "2GbicQtDz5HdRQgMf",
-	"title": "Concussions",
-	"componentNumber": "0700"
-},
-{
-	"_id": "pEDEHLksQBRCGeN5K",
-	"title": "Sports medicine",
-	"componentNumber": "1200"
-},
-{
-	"_id": "mSwAe8u67sdZBa9dQ",
-	"title": "Orthopedics",
-	"componentNumber": "1300"
+	"title": "Example Video Kiosk 01",
+	"componentNumber": "0100"
 },
 {
 	"_id": "wrCn4r8RJZWbS7wwd",
-	"title": "Benefits of activity",
-	"componentNumber": "1400"
+	"title": "Example Video Kiosk 02",
+	"componentNumber": "0200"
 }]
 

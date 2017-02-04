@@ -62,21 +62,21 @@ export default class VideoEditor extends React.Component {
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Question</ControlLabel>
+          <ControlLabel>English text</ControlLabel>
           <FormControl
             type="text"
-            name="questionEn"
-            defaultValue={ video && video.questionEn }
-            placeholder="Question title in English"
+            name="labelEn"
+            defaultValue={ video && video.labelEn }
+            placeholder="Video label in English"
           />
         </FormGroup>
         <FormGroup>
-          <ControlLabel>Spanish question</ControlLabel>
+          <ControlLabel>Spanish text</ControlLabel>
           <FormControl
             type="text"
-            name="questionEs"
-            defaultValue={ video && video.questionEs }
-            placeholder="Question title in Spanish"
+            name="labelEs"
+            defaultValue={ video && video.labelEs }
+            placeholder="Video label in Spanish"
           />
         </FormGroup>
         <Button type="submit" bsStyle="success">

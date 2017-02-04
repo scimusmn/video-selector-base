@@ -50,8 +50,8 @@ class VideosList extends React.Component {
         >
           Video Number
         </TableHeaderColumn>
-        <TableHeaderColumn dataField='questionEn'>Question</TableHeaderColumn>
-        <TableHeaderColumn dataField='questionEs'>Spanish question</TableHeaderColumn>
+        <TableHeaderColumn dataField='labelEn'>English text</TableHeaderColumn>
+        <TableHeaderColumn dataField='labelEs'>Spanish text</TableHeaderColumn>
       </BootstrapTable>
     );
   }

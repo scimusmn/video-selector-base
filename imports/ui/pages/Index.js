@@ -4,10 +4,10 @@ import { Jumbotron } from 'react-bootstrap';
 const Index = () => (
   <div className="Index">
     <Jumbotron className="text-center">
-      <h2>Sports - Coaches Corners</h2>
+      <h2>Video Selector Base</h2>
       <p>
-        Application for displaying and editing Coaches Corners kiosks
-        in the Sportsology exhibit.
+        Application for displaying and editing Video Selector kiosks
+        for SMM exhibits.
       </p>
 
     </Jumbotron>

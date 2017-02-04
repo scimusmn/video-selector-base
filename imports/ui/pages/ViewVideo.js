@@ -48,8 +48,8 @@ const ViewVideo = ({ video }) => (
     </div>
     Component number: { video.componentNumber }<br/>
     Video number: { video.videoNumber }<br/>
-    Question: { video.questionEn }<br/>
-    Spanish question: { video.questionEs }<br/>
+    English text: { video.labelEn }<br/>
+    Spanish text: { video.labelEs }<br/>
     Image:<br/>
     <img src={`/media/${video.componentNumber}/0${video.videoNumber}.png`}/>
     <br/>

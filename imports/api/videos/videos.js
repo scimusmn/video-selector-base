@@ -22,13 +22,13 @@ Videos.schema = new SimpleSchema({
     type: String,
     label: 'Exhibit component number.',
   },
-  questionEn: {
+  labelEn: {
     type: String,
-    label: 'Question title for the video. In English.',
+    label: 'Text label for the video. In English.',
   },
-  questionEs: {
+  labelEs: {
     type: String,
-    label: 'Question title for the video. In Spanish.',
+    label: 'Text label for the video. In Spanish.',
   },
   videoNumber: {
     type: Number,
@@ -40,7 +40,7 @@ Videos.attachSchema(Videos.schema);
 
 Factory.define('document', Videos, {
   componentNumber: () => 'Factory Component Number',
-  questionEn: () => 'Factory English Question',
-  questionEs: () => 'Factory Spanish Question',
+  labelEn: () => 'Factory English Text',
+  labelEs: () => 'Factory Spanish Text',
   videoNumber: () => 'Factory Video Number',
 });
