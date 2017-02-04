@@ -35,6 +35,21 @@ export default class ExhibitComponentEditor extends React.Component {
           placeholder="Component short description"
         />
       </FormGroup>
+      <FormGroup>
+        <ControlLabel>Looping background video</ControlLabel>
+        <FormControl
+          type="checkbox"
+          name="loopingBackground"
+          defaultValue={ exhibitComponent && exhibitComponent.loopingBackground }
+        />
+        <ControlLabel>Video path</ControlLabel>
+        <FormControl
+          type="text"
+          name="loopingBackgroundPath"
+          defaultValue={ exhibitComponent && exhibitComponent.loopingBackgroundPath }
+          placeholder="media/background.mp4"
+        />
+      </FormGroup>
       <Button type="submit" bsStyle="success">
         { exhibitComponent && exhibitComponent._id ? 'Save Changes' : 'Add Exhibit Component' }
       </Button>

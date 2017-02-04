@@ -26,6 +26,16 @@ ExhibitComponents.schema = new SimpleSchema({
     type: String,
     label: 'Exhibit component number. A four digit string. ex. 0200',
   },
+  loopingBackground: {
+    type: Boolean,
+    label: 'Replace default background image with looping video.',
+    defaultValue: false,
+  },
+  loopingBackgroundPath: {
+    type: String,
+    label: 'The path to the optional looping background mp4.',
+    defaultValue: 'media/background.mp4',
+  },
 });
 
 ExhibitComponents.attachSchema(ExhibitComponents.schema);
@@ -33,4 +43,6 @@ ExhibitComponents.attachSchema(ExhibitComponents.schema);
 Factory.define('document', ExhibitComponents, {
   title: () => 'Factory Title',
   componentNumber: () => 'Factory Component Number',
+  loopingBackground: () => 'Factory Looping Background',
+  loopingBackgroundPath: () => 'Factory Looping Background Path',
 });

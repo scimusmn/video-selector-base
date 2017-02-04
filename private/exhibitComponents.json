@@ -1,11 +1,15 @@
 [{
 	"_id": "7mLCuiSyHTbTyBS8g",
 	"title": "Example Video Kiosk 01",
-	"componentNumber": "0100"
+	"componentNumber": "0100",
+  "loopingBackgroundVideo": false,
+  "loopingBackgroundVideoPath": "media/background.mp4"
 },
 {
 	"_id": "wrCn4r8RJZWbS7wwd",
 	"title": "Example Video Kiosk 02",
-	"componentNumber": "0200"
+	"componentNumber": "0200",
+  "loopingBackground": false,
+  "loopingBackgroundPath": "media/background.mp4"
 }]
 
