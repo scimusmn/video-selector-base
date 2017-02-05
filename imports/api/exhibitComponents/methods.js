@@ -9,8 +9,11 @@ export const upsertExhibitComponent = new ValidatedMethod({
     _id: { type: String, optional: true },
     title: { type: String, optional: true },
     componentNumber: { type: String, optional: true },
+    loopingBackground: { type: Boolean, optional: true },
+    buttonAnimations: { type: Boolean, optional: true },
   }).validator(),
   run(document) {
+    console.log('run doc', document);
     return ExhibitComponents.upsert({ _id: document._id }, { $set: document });
   },
 });

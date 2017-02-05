@@ -8,8 +8,8 @@ export const upsertVideo = new ValidatedMethod({
   validate: new SimpleSchema({
     _id: { type: String, optional: true },
     componentNumber: { type: String, optional: true },
-    questionEn: { type: String, optional: true },
-    questionEs: { type: String, optional: true },
+    labelEn: { type: String, optional: true },
+    labelEs: { type: String, optional: true },
     videoNumber: { type: String, optional: true },
   }).validator(),
   run(document) {

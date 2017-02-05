@@ -9,11 +9,14 @@ let component;
 
 const handleExhibitComponentUpsert = () => {
   const { exhibitComponent } = component.props;
+
   const confirmation = exhibitComponent && exhibitComponent._id ?
     'Exhibit component updated!' : 'Exhibit component added!';
   const upsert = {
     title: document.querySelector('[name="title"]').value.trim(),
     componentNumber: document.querySelector('[name="componentNumber"]').value.trim(),
+    loopingBackground: (document.querySelector('[name="loopingBackground"]').checked),
+    buttonAnimations: (document.querySelector('[name="buttonAnimations"]').checked),
   };
 
   if (exhibitComponent && exhibitComponent._id) upsert._id = exhibitComponent._id;
@@ -34,6 +37,7 @@ const handleExhibitComponentUpsert = () => {
 };
 
 const validate = () => {
+
   $(component.exhibitComponentEditorForm).validate({
     rules: {
       title: {

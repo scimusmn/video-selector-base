@@ -40,14 +40,15 @@ export default class ExhibitComponentEditor extends React.Component {
         <FormControl
           type="checkbox"
           name="loopingBackground"
-          defaultValue={ exhibitComponent && exhibitComponent.loopingBackground }
+          defaultChecked={ exhibitComponent && exhibitComponent.loopingBackground }
         />
-        <ControlLabel>Video path</ControlLabel>
+      </FormGroup>
+      <FormGroup>
+        <ControlLabel>Button animations</ControlLabel>
         <FormControl
-          type="text"
-          name="loopingBackgroundPath"
-          defaultValue={ exhibitComponent && exhibitComponent.loopingBackgroundPath }
-          placeholder="media/background.mp4"
+          type="checkbox"
+          name="buttonAnimations"
+          defaultChecked={ exhibitComponent && exhibitComponent.buttonAnimations }
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">

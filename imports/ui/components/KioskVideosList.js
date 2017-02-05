@@ -8,7 +8,9 @@ import logger from '../../modules/logger';
 
 class KioskVideoList extends React.Component {
   constructor(props) {
+
     super(props);
+
     this.state = {
       videos: props.videos,
       playing: props.playing,
@@ -20,7 +22,9 @@ class KioskVideoList extends React.Component {
       idleTime: 0,
       screenSaver: 'inactive',
     };
+
     this.videoCards = {};
+
   }
 
   componentDidMount() {
@@ -145,6 +149,8 @@ class KioskVideoList extends React.Component {
         <ReactCSSTransitionGroup
               transitionName='player-fade'
               transitionAppear={false}
+              transitionEnter={this.props.buttonAnimations}
+              transitionLeave={this.props.buttonAnimations}
               transitionEnterTimeout={500}
               transitionLeaveTimeout={400}>
 
@@ -188,6 +194,8 @@ KioskVideoList.propTypes = {
   playing: React.PropTypes.bool,
   componentNumber: React.PropTypes.string,
   playingVideo: React.PropTypes.string,
+  loopingBackground: React.PropTypes.bool,
+  buttonAnimations: React.PropTypes.bool,
 };
 
 export default KioskVideoList;

@@ -28,13 +28,13 @@ ExhibitComponents.schema = new SimpleSchema({
   },
   loopingBackground: {
     type: Boolean,
-    label: 'Replace default background image with looping video.',
+    label: 'Use background looping video.',
     defaultValue: false,
   },
-  loopingBackgroundPath: {
-    type: String,
-    label: 'The path to the optional looping background mp4.',
-    defaultValue: 'media/background.mp4',
+  buttonAnimations: {
+    type: Boolean,
+    label: 'Use button animations on press.',
+    defaultValue: true,
   },
 });
 
@@ -44,5 +44,5 @@ Factory.define('document', ExhibitComponents, {
   title: () => 'Factory Title',
   componentNumber: () => 'Factory Component Number',
   loopingBackground: () => 'Factory Looping Background',
-  loopingBackgroundPath: () => 'Factory Looping Background Path',
+  buttonAnimations: () => 'Factory Button Animations',
 });
