@@ -3,6 +3,7 @@ import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import VideoCard from './VideosCard';
 import VideoPlayer from './VideoPlayer';
+import LoopingBackground from './LoopingBackground';
 import VideoPlayerScreenSaver from './VideoPlayerScreenSaver';
 import logger from '../../modules/logger';
 
@@ -87,6 +88,7 @@ class KioskVideoList extends React.Component {
       selectedVideo: e.currentTarget.id,
       selectedIndex: posIndex,
       showVideo: true,
+      transitioning: true,
     });
 
     // Log for analytics
@@ -95,6 +97,12 @@ class KioskVideoList extends React.Component {
                   selectedVideo:e.currentTarget.id,
                   positionIndex:posIndex,
                   });
+
+    setTimeout(()=> {
+
+      this.setState({ transitioning: false });
+
+    }, 1000);
 
   }
 
@@ -111,9 +119,25 @@ class KioskVideoList extends React.Component {
 
         this.setState({ transitioning: false, selectedIndex:-1 });
 
-      }, 150);
+      }, 200);
 
     }
+
+  }
+
+  loopBackground() {
+
+    let doLoop = false;
+
+    if (this.props.loopingBackground && this.state.screenSaver != 'active') {
+      if (this.state.playing && this.state.transitioning) {
+        doLoop = true;
+      } else if (!this.state.playing) {
+        doLoop = true;
+      }
+    }
+
+    return doLoop;
 
   }
 
@@ -135,6 +159,20 @@ class KioskVideoList extends React.Component {
 
     return (
       <div onClick={this.resetScreenSaverTimer.bind(this)} key='unique' id='selection-screen' className={'vid-count-' + this.props.videos.length}>
+
+        {/* Background video loop *//* Background video loop */}/* Background video loop */}/* Background video loop */}
+        {
+            this.loopBackground() === true
+            ?
+            <div
+              className='looping-background'
+            >
+              <LoopingBackground
+                componentNumber={this.state.componentNumber}
+              />
+            </div>
+            : null
+        }
 
         {/* Coaches Corner headline title *//* Coaches Corner headline title */}
         <h1>

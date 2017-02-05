@@ -15,10 +15,11 @@ const composer = ({ params }, onData) => {
     const playing = false;
     const componentNumber = params.componentNumber;
     const component = ExhibitComponents.findOne();
-    const loopingVideo = component.loopingVideo;
+    console.log(component);
+    const loopingBackground = component.loopingBackground;
     const buttonAnimations = component.buttonAnimations;
 
-    onData(null, { videos, playing, componentNumber, loopingVideo, buttonAnimations });
+    onData(null, { videos, playing, componentNumber, loopingBackground, buttonAnimations });
   }
 };
 
