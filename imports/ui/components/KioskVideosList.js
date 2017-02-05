@@ -25,6 +25,8 @@ class KioskVideoList extends React.Component {
     };
 
     this.videoCards = {};
+    this.transEnterTime = 500;
+    this.transLeaveTime = 400;
 
   }
 
@@ -98,11 +100,13 @@ class KioskVideoList extends React.Component {
                   positionIndex:posIndex,
                   });
 
+    // Wait for transition
+    // to kill display state
     setTimeout(()=> {
 
       this.setState({ transitioning: false });
 
-    }, 1000);
+    }, this.transEnterTime);
 
   }
 
@@ -160,7 +164,7 @@ class KioskVideoList extends React.Component {
     return (
       <div onClick={this.resetScreenSaverTimer.bind(this)} key='unique' id='selection-screen' className={'vid-count-' + this.props.videos.length}>
 
-        {/* Background video loop *//* Background video loop */}/* Background video loop */}/* Background video loop */}
+        {/* Background video loop *//* Background video loop */}
         {
             this.loopBackground() === true
             ?
@@ -187,10 +191,10 @@ class KioskVideoList extends React.Component {
         <ReactCSSTransitionGroup
               transitionName='player-fade'
               transitionAppear={false}
-              transitionEnter={this.props.buttonAnimations}
-              transitionLeave={this.props.buttonAnimations}
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={400}>
+              transitionEnter={this.props.transitions}
+              transitionLeave={this.props.transitions}
+              transitionEnterTimeout={this.transEnterTime}
+              transitionLeaveTimeout={this.transLeaveTime}>
 
           {(this.state.playing)
             ?
@@ -233,7 +237,7 @@ KioskVideoList.propTypes = {
   componentNumber: React.PropTypes.string,
   playingVideo: React.PropTypes.string,
   loopingBackground: React.PropTypes.bool,
-  buttonAnimations: React.PropTypes.bool,
+  transitions: React.PropTypes.bool,
 };
 
 export default KioskVideoList;

@@ -31,9 +31,9 @@ ExhibitComponents.schema = new SimpleSchema({
     label: 'Use background looping video.',
     defaultValue: false,
   },
-  buttonAnimations: {
+  transitions: {
     type: Boolean,
-    label: 'Use button animations on press.',
+    label: 'Use transitions between states.',
     defaultValue: true,
   },
 });
@@ -44,5 +44,5 @@ Factory.define('document', ExhibitComponents, {
   title: () => 'Factory Title',
   componentNumber: () => 'Factory Component Number',
   loopingBackground: () => 'Factory Looping Background',
-  buttonAnimations: () => 'Factory Button Animations',
+  transitions: () => 'Factory Transitions Bool',
 });

@@ -10,7 +10,7 @@ export const upsertExhibitComponent = new ValidatedMethod({
     title: { type: String, optional: true },
     componentNumber: { type: String, optional: true },
     loopingBackground: { type: Boolean, optional: true },
-    buttonAnimations: { type: Boolean, optional: true },
+    transitions: { type: Boolean, optional: true },
   }).validator(),
   run(document) {
     console.log('run doc', document);

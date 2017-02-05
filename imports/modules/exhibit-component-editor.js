@@ -16,7 +16,7 @@ const handleExhibitComponentUpsert = () => {
     title: document.querySelector('[name="title"]').value.trim(),
     componentNumber: document.querySelector('[name="componentNumber"]').value.trim(),
     loopingBackground: (document.querySelector('[name="loopingBackground"]').checked),
-    buttonAnimations: (document.querySelector('[name="buttonAnimations"]').checked),
+    transitions: (document.querySelector('[name="transitions"]').checked),
   };
 
   if (exhibitComponent && exhibitComponent._id) upsert._id = exhibitComponent._id;

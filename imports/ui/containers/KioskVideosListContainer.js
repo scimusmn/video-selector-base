@@ -17,9 +17,9 @@ const composer = ({ params }, onData) => {
     const component = ExhibitComponents.findOne();
     console.log(component);
     const loopingBackground = component.loopingBackground;
-    const buttonAnimations = component.buttonAnimations;
+    const transitions = component.transitions;
 
-    onData(null, { videos, playing, componentNumber, loopingBackground, buttonAnimations });
+    onData(null, { videos, playing, componentNumber, loopingBackground, transitions });
   }
 };
 

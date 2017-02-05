@@ -3,13 +3,13 @@
 	"title": "Example Video Kiosk 01",
 	"componentNumber": "0100",
   "loopingBackgroundVideo": false,
-  "buttonAnimations": true
+  "transitions": true
 },
 {
 	"_id": "wrCn4r8RJZWbS7wwd",
 	"title": "Example Video Kiosk 02",
 	"componentNumber": "0200",
   "loopingBackground": true,
-  "buttonAnimations": true
+  "transitions": true
 }]
 

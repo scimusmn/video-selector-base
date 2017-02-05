@@ -44,11 +44,11 @@ export default class ExhibitComponentEditor extends React.Component {
         />
       </FormGroup>
       <FormGroup>
-        <ControlLabel>Button animations</ControlLabel>
+        <ControlLabel>Transitions</ControlLabel>
         <FormControl
           type="checkbox"
-          name="buttonAnimations"
-          defaultChecked={ exhibitComponent && exhibitComponent.buttonAnimations }
+          name="transitions"
+          defaultChecked={ exhibitComponent && exhibitComponent.transitions }
         />
       </FormGroup>
       <Button type="submit" bsStyle="success">
