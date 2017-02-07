@@ -15,7 +15,6 @@ const composer = ({ params }, onData) => {
     const playing = false;
     const componentNumber = params.componentNumber;
     const component = ExhibitComponents.findOne();
-    console.log(component);
     const loopingBackground = component.loopingBackground;
     const transitions = component.transitions;
 
