@@ -211,7 +211,14 @@ class KioskVideoList extends React.Component {
           </ReactCSSTransitionGroup>
 
         {/* Modal screen saver *//* Modal screen saver */}
-        {
+        <ReactCSSTransitionGroup
+              transitionName='player-fade'
+              transitionAppear={false}
+              transitionEnter={this.props.transitions}
+              transitionLeave={this.props.transitions}
+              transitionEnterTimeout={this.transEnterTime}
+              transitionLeaveTimeout={this.transLeaveTime}>
+          {
           this.state.screenSaver === 'active'
             ?
             <div
@@ -224,7 +231,7 @@ class KioskVideoList extends React.Component {
             </div>
             : null
         }
-
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
