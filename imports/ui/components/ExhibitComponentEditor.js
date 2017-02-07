@@ -51,6 +51,14 @@ export default class ExhibitComponentEditor extends React.Component {
           defaultChecked={ exhibitComponent && exhibitComponent.transitions }
         />
       </FormGroup>
+      <FormGroup>
+        <ControlLabel>Shuffle button order</ControlLabel>
+        <FormControl
+          type="checkbox"
+          name="shuffleOnStart"
+          defaultChecked={ exhibitComponent && exhibitComponent.shuffleOnStart }
+        />
+      </FormGroup>
       <Button type="submit" bsStyle="success">
         { exhibitComponent && exhibitComponent._id ? 'Save Changes' : 'Add Exhibit Component' }
       </Button>

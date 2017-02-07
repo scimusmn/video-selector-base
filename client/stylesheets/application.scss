@@ -126,37 +126,37 @@ h2 div.es {
   margin: 20px;
 }
 
-#selection-screen #video-02,
-#selection-screen #video-04 {
+#selection-screen .video-02,
+#selection-screen .video-04 {
   left: 658px;
 }
 
-#selection-screen #video-03,
-#selection-screen #video-06 {
+#selection-screen .video-03,
+#selection-screen .video-06 {
   left: 1287px;
 }
 
-#selection-screen #video-04,
-#selection-screen #video-05,
-#selection-screen #video-06 {
+#selection-screen .video-04,
+#selection-screen .video-05,
+#selection-screen .video-06 {
   top: 663px;
 }
 
 /**
  * Rules for kiosks with fewer videos
  */
-#selection-screen.vid-count-4 #video-03{
+#selection-screen.vid-count-4 .video-03{
   top: 663px;
 }
 
-#selection-screen.vid-count-4 #video-01,
-#selection-screen.vid-count-4 #video-03,
-#selection-screen.vid-count-5 #video-04 {
+#selection-screen.vid-count-4 .video-01,
+#selection-screen.vid-count-4 .video-03,
+#selection-screen.vid-count-5 .video-04 {
   left: 349px;
 }
-#selection-screen.vid-count-4 #video-02,
-#selection-screen.vid-count-4 #video-04,
-#selection-screen.vid-count-5 #video-05 {
+#selection-screen.vid-count-4 .video-02,
+#selection-screen.vid-count-4 .video-04,
+#selection-screen.vid-count-5 .video-05 {
   left: 980px;
 }
 

@@ -17,8 +17,9 @@ const composer = ({ params }, onData) => {
     const component = ExhibitComponents.findOne();
     const loopingBackground = component.loopingBackground;
     const transitions = component.transitions;
+    const shuffleOnStart = component.shuffleOnStart;
 
-    onData(null, { videos, playing, componentNumber, loopingBackground, transitions });
+    onData(null, { videos, playing, componentNumber, loopingBackground, transitions, shuffleOnStart });
   }
 };
 

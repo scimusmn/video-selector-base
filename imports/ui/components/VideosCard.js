@@ -20,9 +20,13 @@ class VideoCard extends React.Component {
 
   }
 
-  getClassy() {
+  getClassName() {
 
-    return 'video-button ' + ((this.props.isActive == true) ? 'active' : '');
+    let className = 'video-button ' + ((this.props.isActive == true) ? 'active' : '');
+
+    className += ' video-0' + this.props.position;
+
+    return className;
 
   }
 
@@ -35,8 +39,8 @@ class VideoCard extends React.Component {
     return (
       <div
         onClick={this.handleVideoSelect.bind(this)}
-        className={this.getClassy()}
-        data-pos-index={this.props.positionIndex}
+        className={this.getClassName()}
+        data-position={this.props.position}
         data-vid-num={video.videoNumber}
         id={`video-${paddedVideoNumber}`}
       >
@@ -55,7 +59,7 @@ VideoCard.propTypes = {
   playing: React.PropTypes.bool,
   video: React.PropTypes.object,
   launchVideoPlayer: React.PropTypes.func,
-  positionIndex: React.PropTypes.number,
+  position: React.PropTypes.number,
   isActive: React.PropTypes.bool,
 };
 

@@ -36,6 +36,11 @@ ExhibitComponents.schema = new SimpleSchema({
     label: 'Use transitions between states.',
     defaultValue: true,
   },
+  shuffleOnStart: {
+    type: Boolean,
+    label: 'Randomize video-card positions on start.',
+    defaultValue: false,
+  },
 });
 
 ExhibitComponents.attachSchema(ExhibitComponents.schema);
@@ -45,4 +50,5 @@ Factory.define('document', ExhibitComponents, {
   componentNumber: () => 'Factory Component Number',
   loopingBackground: () => 'Factory Looping Background',
   transitions: () => 'Factory Transitions Bool',
+  shuffleOnStart: () => 'Factory Shuffle Bool',
 });

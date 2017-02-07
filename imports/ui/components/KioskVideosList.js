@@ -6,6 +6,7 @@ import VideoPlayer from './VideoPlayer';
 import LoopingBackground from './LoopingBackground';
 import VideoPlayerScreenSaver from './VideoPlayerScreenSaver';
 import logger from '../../modules/logger';
+import _ from 'lodash';
 
 class KioskVideoList extends React.Component {
   constructor(props) {
@@ -18,13 +19,15 @@ class KioskVideoList extends React.Component {
       transitioning: false,
       componentNumber: props.componentNumber,
       selectedVideo: '0',
-      selectedIndex: -1,
+      selectedPosition: -1,
       showVideo: false,
       idleTime: 0,
       screenSaver: 'inactive',
     };
 
-    this.videoCards = {};
+    // Generate video-card positions
+    this.videoOrder = this.createVideoOrder(props.shuffleOnStart);
+
     this.transEnterTime = 500;
     this.transLeaveTime = 400;
 
@@ -72,9 +75,30 @@ class KioskVideoList extends React.Component {
     });
   }
 
+  createVideoOrder(shuffle) {
+
+    let vidNums = [];
+
+    for (var i = 0; i < this.props.videos.length; i++) {
+
+      vidNums.push(this.props.videos[i].videoNumber);
+
+    }
+
+    // Shuffle video order
+    if (shuffle) {
+
+      vidNums = _.shuffle(vidNums);
+
+    }
+
+    return vidNums;
+
+  }
+
   isActiveCard(index) {
 
-    if (index == this.state.selectedIndex) {
+    if (index == this.state.selectedPosition) {
       return true;
     } else {
       return false;
@@ -83,12 +107,13 @@ class KioskVideoList extends React.Component {
 
   launchVideoPlayer(e) {
 
-    const posIndex = e.currentTarget.getAttribute('data-pos-index');
+    const position = e.currentTarget.getAttribute('data-position');
+
 
     this.setState({
       playing: true,
       selectedVideo: e.currentTarget.id,
-      selectedIndex: posIndex,
+      selectedPosition: position,
       showVideo: true,
       transitioning: true,
     });
@@ -97,7 +122,7 @@ class KioskVideoList extends React.Component {
     logger.info({ message:'video-selected',
                   kiosk: this.props.location.pathname,
                   selectedVideo:e.currentTarget.id,
-                  positionIndex:posIndex,
+                  position:position,
                   });
 
     // Wait for transition
@@ -121,7 +146,7 @@ class KioskVideoList extends React.Component {
 
       setTimeout(()=> {
 
-        this.setState({ transitioning: false, selectedIndex:-1 });
+        this.setState({ transitioning: false, selectedPosition:-1 });
 
       }, 200);
 
@@ -150,14 +175,14 @@ class KioskVideoList extends React.Component {
     /**
      * Loop through the videos and render a card for each question
      */
-    this.videoCards = this.props.videos.map((video, index) =>
+    const videoCards = this.props.videos.map((video, index) =>
       <VideoCard
         launchVideoPlayer={this.launchVideoPlayer.bind(this)}
         playing={this.state.playing}
         key={video._id}
-        positionIndex={index}
+        position={this.videoOrder[index]}
         video={video}
-        isActive={this.isActiveCard(index)}
+        isActive={this.isActiveCard(this.videoOrder[index])}
       />
     );
 
@@ -185,7 +210,7 @@ class KioskVideoList extends React.Component {
         </h1>
 
         {/* Question buttons *//* Question buttons */}
-        {this.videoCards}
+        {videoCards}
 
         {/* Modal video player *//* Modal video player */}
         <ReactCSSTransitionGroup
