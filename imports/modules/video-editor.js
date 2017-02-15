@@ -12,8 +12,8 @@ const handleVideoUpsert = () => {
   const confirmation = video && video._id ? 'Video updated!' : 'Video added!';
   const upsert = {
     componentNumber: document.querySelector('[name="componentNumber"]').value.trim(),
-    questionEn: document.querySelector('[name="questionEn"]').value.trim(),
-    questionEs: document.querySelector('[name="questionEs"]').value.trim(),
+    labelEn: document.querySelector('[name="labelEn"]').value.trim(),
+    labelEs: document.querySelector('[name="labelEs"]').value.trim(),
     videoNumber: document.querySelector('[name="videoNumber"]').value.trim(),
   };
 
@@ -38,11 +38,11 @@ const validate = () => {
       componentNumber: {
         required: true,
       },
-      questionEn: {
-        required: true,
+      labelEn: {
+        required: false,
       },
-      questionEs: {
-        required: true,
+      labelEs: {
+        required: false,
       },
       videoNumber: {
         required: true,
@@ -52,11 +52,11 @@ const validate = () => {
       componentNumber: {
         required: requiredMessage('component number'),
       },
-      questionEn: {
-        required: requiredMessage('English question'),
+      labelEn: {
+        required: requiredMessage('English label'),
       },
-      questionEs: {
-        required: requiredMessage('Spanish question'),
+      labelEs: {
+        required: requiredMessage('Spanish label'),
       },
     },
     submitHandler() { handleVideoUpsert(); },

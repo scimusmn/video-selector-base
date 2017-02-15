@@ -25,10 +25,14 @@ Videos.schema = new SimpleSchema({
   labelEn: {
     type: String,
     label: 'Text label for the video. In English.',
+    optional: true,
+    defaultValue:'',
   },
   labelEs: {
     type: String,
     label: 'Text label for the video. In Spanish.',
+    optional: true,
+    defaultValue:'',
   },
   videoNumber: {
     type: Number,
